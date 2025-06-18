@@ -17,6 +17,8 @@ return {
       vim.cmd.colorscheme 'tokyonight-storm'
     end,
   },
+  'rose-pine/neovim',
+  { 'catppuccin/nvim', name = 'catpuccin', priority = 1000 },
   'EdenEast/nightfox.nvim',
   'sainnhe/gruvbox-material',
 }
