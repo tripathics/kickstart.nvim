@@ -13,12 +13,17 @@ return {
           comments = { italic = false }, -- Disable italics in comments
         },
       }
-
-      vim.cmd.colorscheme 'tokyonight-storm'
     end,
   },
   'rose-pine/neovim',
-  { 'catppuccin/nvim', name = 'catpuccin', priority = 1000 },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'catppuccin-mocha'
+    end,
+  },
   'EdenEast/nightfox.nvim',
-  'sainnhe/gruvbox-material',
+  'ellisonleao/gruvbox.nvim',
 }

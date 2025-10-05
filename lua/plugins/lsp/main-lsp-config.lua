@@ -168,10 +168,13 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      clangd = {},
+      clangd = {
+        filetypes = { 'cpp', 'c' },
+        capabilities = capabilities,
+      },
       bashls = {},
       -- gopls = {},
-      -- pyright = {},
+      pyright = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
@@ -180,11 +183,8 @@ return {
       --
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       ts_ls = {},
-      angularls = {
-        filetypes = { 'typescript', 'html', 'css' },
-        capabilities = capabilities,
-      },
       cssls = {},
+      copilot = {},
 
       lua_ls = {
         -- cmd = { ... },

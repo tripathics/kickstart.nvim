@@ -22,6 +22,7 @@ require('lazy').setup {
   require 'plugins.undotree',
 
   require 'plugins.vim-fugitive',
+  -- require 'plugins.copilot',
 
   -- LSP Plugins
   require 'plugins.lsp.lazydev', -- configures Lua LSP for your Neovim config, runtime and plugins
