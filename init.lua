@@ -14,7 +14,7 @@ require 'config.autocmds' -- autocmds
 require 'config.lazy' -- lazy plugin manager
 
 -- [[ Configure and install plugins ]]
-require('lazy').setup {
+require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   require 'plugins.themes',
   require 'plugins.which-key',
@@ -36,6 +36,10 @@ require('lazy').setup {
 
   require 'plugins.neo-tree',
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
-}
+}, {
+  git = {
+    url_format = 'git@github.com:%s.git',
+  },
+})
 
 -- vim: ts=2 sts=2 sw=2 et
