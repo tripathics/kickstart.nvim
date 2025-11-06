@@ -11,10 +11,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
-vim.keymap.set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
-vim.keymap.set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
-vim.keymap.set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
+-- resizing windows
+vim.keymap.set('n', '<C-Up>', '<cmd>resize +4<CR>', { desc = 'Increase window height' })
+vim.keymap.set('n', '<C-Down>', '<cmd>resize -4<CR>', { desc = 'Decrease window height' })
+vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Increase window width' })
 
 -- cd into current file parent dir
 vim.keymap.set('n', '<leader>.', function()
@@ -42,8 +43,3 @@ vim.keymap.set('n', '<leader>ts', function()
   vim.cmd.wincmd 'J'
   vim.api.nvim_win_set_height(0, 15)
 end, { desc = 'Open a [t]erminal [s]mall' })
-
--- [[ Disable some troubling keymaps ]]
-vim.keymap.set('n', 'q:', '<nop>')
-vim.keymap.set('n', 'q/', '<nop>')
-vim.keymap.set('n', 'q?', '<nop>')

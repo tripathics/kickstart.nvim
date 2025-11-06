@@ -81,7 +81,21 @@ return { -- Autocompletion
       },
     },
 
-    snippets = { preset = 'luasnip' },
+    snippets = {
+      preset = 'luasnip',
+      active = function() -- forget the snippet session once I go to normal mode
+        local snippet = require 'luasnip'
+        local blink = require 'blink.cmp'
+        if snippet.in_snippet() and not blink.is_visible() then
+          return true
+        else
+          if not snippet.in_snippet() and vim.fn.mode() == 'n' then
+            snippet.unlink_current()
+          end
+          return false
+        end
+      end,
+    },
 
     -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
     -- which automatically downloads a prebuilt binary when enabled.

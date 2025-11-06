@@ -11,6 +11,7 @@ vim.opt.list = true
 vim.opt.linebreak = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.breakindent = true
+vim.opt.cursorline = true
 
 -- tabs
 vim.opt.expandtab = true
