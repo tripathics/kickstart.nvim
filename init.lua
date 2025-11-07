@@ -5,6 +5,8 @@ vim.g.maplocalleader = ' '
 -- Use nerd font (font with beautiful icons)
 vim.g.have_nerd_font = true
 
+vim.opt.guifont = 'JetBrainsMono Nerd Font Propo:h10'
+
 -- [[ Basic setup ]]
 require 'config.options' -- setting options
 require 'config.keymaps' -- keymaps
@@ -16,7 +18,7 @@ require 'config.lazy' -- lazy plugin manager
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-obsession', -- Session management
+  'tpope/vim-obsession', -- session management
   require 'plugins.themes',
   require 'plugins.which-key',
   require 'plugins.telescope',
@@ -36,6 +38,7 @@ require('lazy').setup({
 
   require 'plugins.neo-tree',
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
+
   require 'plugins.markdown-preview', -- markdown preview in browser
 }, {
   git = {
