@@ -37,6 +37,8 @@ require('lazy').setup({
   require 'plugins.neo-tree',
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.markdown-preview', -- markdown preview in browser
+
+  require 'plugins.copilot',
 }, {
   git = {
     url_format = 'git@github.com:%s.git',
