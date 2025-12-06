@@ -34,12 +34,12 @@ vim.keymap.set('n', '<leader>bo', '<cmd>only<CR>', { desc = 'Current[B]uffer: [o
 -- Terminal keymaps
 vim.keymap.set('n', '<leader>tt', function()
   vim.cmd.tabnew()
-  vim.cmd.term()
+  vim.cmd.term('bash')
 end, { desc = 'Open a [t]erminal in new [t]ab' })
 
 vim.keymap.set('n', '<leader>ts', function()
   vim.cmd.vnew()
-  vim.cmd.term()
+  vim.cmd.term('bash')
   vim.cmd.wincmd 'J'
   vim.api.nvim_win_set_height(0, 15)
 end, { desc = 'Open a [t]erminal [s]mall' })
