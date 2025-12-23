@@ -1,6 +1,7 @@
 -- [[ Setting options ]]
 
 -- Look and feel
+vim.opt.guifont = 'JetBrainsMono Nerd Font Propo:h16'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 5

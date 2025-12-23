@@ -2,10 +2,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Use nerd font (font with beautiful icons)
 vim.g.have_nerd_font = true
-
-vim.opt.guifont = 'JetBrainsMono Nerd Font Propo:h10'
 
 -- [[ Basic setup ]]
 require 'config.options' -- setting options
@@ -17,13 +14,14 @@ require 'config.lazy' -- lazy plugin manager
 
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-obsession', -- session management
   require 'plugins.themes',
   require 'plugins.which-key',
   require 'plugins.telescope',
   require 'plugins.undotree',
 
+  require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.vim-fugitive',
 
   -- LSP Plugins
@@ -37,9 +35,14 @@ require('lazy').setup({
   require 'plugins.nvim-treesitter',
 
   require 'plugins.neo-tree',
-  require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
 
-  require 'plugins.markdown-preview', -- markdown preview in browser
+  -- require 'plugins.markdown-preview', -- markdown preview in browser
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = 'cd app && npm install',
+  },
 
   require 'plugins.copilot',
 }, {

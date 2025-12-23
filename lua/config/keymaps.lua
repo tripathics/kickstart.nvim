@@ -12,10 +12,10 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- resizing windows
-vim.keymap.set('n', '<C-Up>', '<cmd>resize +4<CR>', { desc = 'Increase window height' })
-vim.keymap.set('n', '<C-Down>', '<cmd>resize -4<CR>', { desc = 'Decrease window height' })
-vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Decrease window width' })
-vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Increase window width' })
+vim.keymap.set('n', '<C-Up>', '<cmd>resize +2<CR>', { desc = 'Increase window height' })
+vim.keymap.set('n', '<C-Down>', '<cmd>resize -2<CR>', { desc = 'Decrease window height' })
+vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -4<CR>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +4<CR>', { desc = 'Increase window width' })
 
 -- cd into current file parent dir
 vim.keymap.set('n', '<leader>.', function()
@@ -32,14 +32,16 @@ vim.keymap.set('n', '<leader>bh', '<cmd>hide<CR>', { desc = 'Current [B]uffer: [
 vim.keymap.set('n', '<leader>bo', '<cmd>only<CR>', { desc = 'Current[B]uffer: [o]only current' })
 
 -- Terminal keymaps
+TERM = vim.uv.os_uname().sysname ~= 'Linux' and 'bash' or nil
+
 vim.keymap.set('n', '<leader>tt', function()
   vim.cmd.tabnew()
-  vim.cmd.term('bash')
+  vim.cmd.term(TERM)
 end, { desc = 'Open a [t]erminal in new [t]ab' })
 
 vim.keymap.set('n', '<leader>ts', function()
   vim.cmd.vnew()
-  vim.cmd.term('bash')
+  vim.cmd.term(TERM)
   vim.cmd.wincmd 'J'
   vim.api.nvim_win_set_height(0, 15)
 end, { desc = 'Open a [t]erminal [s]mall' })

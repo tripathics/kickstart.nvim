@@ -185,6 +185,12 @@ return {
       ts_ls = {},
       cssls = {},
       tailwindcss = {},
+      angularls = {
+        capabilities = capabilities,
+        filetypes = { 'htmlangular' },
+        root_markers = { 'angular.json', 'nx.json' },
+        single_file_support = false,
+      },
       -- copilot = {},
 
       lua_ls = {
