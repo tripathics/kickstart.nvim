@@ -13,7 +13,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       end,
     },
     { 'nvim-telescope/telescope-ui-select.nvim' },
-    { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that it can fuzzy find! It's more than just a "file finder", it can search
@@ -40,11 +40,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
+      defaults = {
+        mappings = {
+          i = {
+            ['<c-q>'] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist,
+            ['<c-l>'] = require('telescope.actions').send_to_loclist + require('telescope.actions').open_loclist,
+          },
+        },
+      },
       -- pickers = {}
       extensions = {
         ['ui-select'] = {

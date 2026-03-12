@@ -1,10 +1,12 @@
 -- [[ Setting options ]]
 
 -- Look and feel
-vim.opt.guifont = 'JetBrainsMono Nerd Font Propo:h16'
+vim.opt.termguicolors = true
+vim.opt.guifont = 'JetBrainsMono Nerd Font:h14'
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 3
+vim.opt.foldenable = false
 
 vim.opt.showmode = false
 vim.opt.signcolumn = 'yes'
@@ -12,7 +14,6 @@ vim.opt.list = true
 vim.opt.linebreak = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.breakindent = true
-vim.opt.cursorline = true
 
 -- tabs
 vim.opt.expandtab = true

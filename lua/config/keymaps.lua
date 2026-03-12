@@ -29,7 +29,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and go to center' })
 
 -- buffer keymaps
 vim.keymap.set('n', '<leader>bh', '<cmd>hide<CR>', { desc = 'Current [B]uffer: [h]ide current' })
-vim.keymap.set('n', '<leader>bo', '<cmd>only<CR>', { desc = 'Current[B]uffer: [o]only current' })
 
 -- Terminal keymaps
 TERM = vim.uv.os_uname().sysname ~= 'Linux' and 'bash' or nil
