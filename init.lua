@@ -36,7 +36,6 @@ require('lazy').setup({
 
   require 'plugins.neo-tree',
 
-  -- require 'plugins.markdown-preview', -- markdown preview in browser
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },

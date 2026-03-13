@@ -1,12 +1,11 @@
 -- [[ Setting options ]]
 
 -- Look and feel
+vim.opt.guifont = 'Lilex:h14'
 vim.opt.termguicolors = true
-vim.opt.guifont = 'JetBrainsMono Nerd Font:h14'
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 3
-vim.opt.foldenable = false
+vim.opt.scrolloff = 4
 
 vim.opt.showmode = false
 vim.opt.signcolumn = 'yes'
@@ -20,6 +19,11 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+
+-- folds
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 
 -- how/when we split
 vim.opt.splitright = true
