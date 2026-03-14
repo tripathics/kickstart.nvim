@@ -13,7 +13,7 @@ require 'config.autocmds' -- autocmds
 require 'config.lazy' -- lazy plugin manager
 
 -- [[ Configure and install plugins ]]
-require('lazy').setup({
+require('lazy').setup {
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-obsession', -- session management
   require 'plugins.themes',
@@ -44,10 +44,6 @@ require('lazy').setup({
   },
 
   require 'plugins.copilot',
-}, {
-  git = {
-    url_format = 'git@github.com:%s.git',
-  },
-})
+}
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -19,6 +19,32 @@ return {
     { 'SmiteshP/nvim-navic', opts = {} },
   },
   config = function()
+    -- Winbar context
+    _G.winbar_context = function()
+      local navic = require 'nvim-navic'
+      if navic.is_available() and navic.get_location() ~= '' then
+        return navic.get_location()
+      end
+      return '%f'
+    end
+
+    _G.update_winbar = function()
+      local navic = require 'nvim-navic'
+      local is_special_window = vim.bo.buftype ~= ''
+      if vim.wo.diff or is_special_window or not navic.is_available() then
+        vim.wo.winbar = ''
+      else
+        vim.wo.winbar = '%{%v:lua.winbar_context()%}'
+      end
+    end
+
+    -- update winbar
+    vim.api.nvim_create_autocmd({ 'BufWinEnter', 'OptionSet' }, {
+      pattern = { '*', 'diff' },
+      group = vim.api.nvim_create_augroup('winbar-update', { clear = true }),
+      callback = _G.update_winbar,
+    })
+
     --  This function gets run when an LSP attaches to a particular buffer.
     --    That is to say, every time a new file is opened that is associated with
     --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -79,26 +105,7 @@ return {
         if client and client.server_capabilities.documentSymbolProvider then
           local navic = require 'nvim-navic'
           navic.attach(client, event.buf)
-
-          _G.winbar_context = function()
-            if navic.is_available() and navic.get_location() ~= '' then
-              return navic.get_location()
-            end
-            return '%f'
-          end
-
-          vim.wo.winbar = '%{%v:lua.winbar_context()%}'
-        end
-      end,
-    })
-
-    -- clear winbar on special windows
-    vim.api.nvim_create_autocmd('BufWinEnter', {
-      group = vim.api.nvim_create_augroup('winbar-special-buffers', { clear = true }),
-      callback = function()
-        local buftype = vim.bo.buftype
-        if buftype ~= '' then
-          vim.wo.winbar = ''
+          _G.update_winbar()
         end
       end,
     })
