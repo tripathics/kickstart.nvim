@@ -28,7 +28,7 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and go to center' 
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and go to center' })
 
 -- buffer keymaps
-vim.keymap.set('n', '<leader>bh', '<cmd>hide<CR>', { desc = 'Current [B]uffer: [h]ide current' })
+vim.keymap.set('n', '<C-w>c', '<cmd>hide<CR>', { desc = '[C]lose window' })
 
 -- Terminal keymaps
 TERM = vim.uv.os_uname().sysname ~= 'Linux' and 'bash' or nil

@@ -36,12 +36,7 @@ require('lazy').setup {
 
   require 'plugins.neo-tree',
 
-  {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = 'cd app && npm install',
-  },
+  require 'plugins.markdown',
 
   require 'plugins.copilot',
 }
