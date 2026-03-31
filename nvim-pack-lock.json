@@ -1,0 +1,40 @@
+{
+  "plugins": {
+    "dired.nvim": {
+      "rev": "83fe371be5e7b6a0fe825c2250d64a4f82a9bd1b",
+      "src": "https://github.com/nvimdev/dired.nvim"
+    },
+    "fzf-lua": {
+      "rev": "bde73a6886b607246095aa59f396de5e0d036890",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "guard-collection": {
+      "rev": "edf6c86c06badc972964dadb7fd469022690cbf0",
+      "src": "https://github.com/nvimdev/guard-collection"
+    },
+    "guard.nvim": {
+      "rev": "addb8d2f40662b8b62d60dd7d18f503beb2332e7",
+      "src": "https://github.com/nvimdev/guard.nvim"
+    },
+    "modeline.nvim": {
+      "rev": "527963ac6dd50ada1bf281b5418185feca78b204",
+      "src": "https://github.com/nvimdev/modeline.nvim"
+    },
+    "nvim-treesitter": {
+      "rev": "6620ae1c44dfa8623b22d0cbf873a9e8d073b849",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-textobjects": {
+      "rev": "93d60a475f0b08a8eceb99255863977d3a25f310",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    "phoenix.nvim": {
+      "rev": "267f88ca76677abc1492df7cd267278472f84f2d",
+      "src": "https://github.com/nvimdev/phoenix.nvim"
+    }
+  }
+}

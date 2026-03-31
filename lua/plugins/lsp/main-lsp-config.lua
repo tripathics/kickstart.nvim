@@ -10,7 +10,16 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
-    { 'j-hui/fidget.nvim', opts = {} },
+    {
+      'j-hui/fidget.nvim',
+      opts = {
+        notification = {
+          window = {
+            winblend = 80,
+          },
+        },
+      },
+    },
 
     -- Allows extra capabilities provided by blink.cmp
     'saghen/blink.cmp',
@@ -169,7 +178,7 @@ return {
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`ts_ls`) will work just fine
-      angularls = {},
+      -- angularls = {},
       ts_ls = {},
       cssls = {},
       tailwindcss = {},

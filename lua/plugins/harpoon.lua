@@ -2,7 +2,10 @@
 return {
   'theprimeagen/harpoon',
   branch = 'harpoon2',
-  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+  },
   config = function()
     local harpoon = require 'harpoon'
 
@@ -11,7 +14,7 @@ return {
     -- set keymaps
     vim.keymap.set('n', '<leader>m', function()
       harpoon:list():add()
-      vim.notify 'Added to harpoon list'
+      vim.notify('Added to harpoon list', vim.log.levels.INFO)
     end, { desc = 'Add to harpoon list' })
 
     vim.keymap.set('n', '<c-p>', function()
@@ -32,16 +35,16 @@ return {
     end, { desc = '[g]oto [n]ext buffer in harpoon ls' })
 
     -- Jump between first 4 buffers within harpoon list
-    vim.keymap.set('n', '<leader>g1', function()
+    vim.keymap.set('n', '<leader>1', function()
       harpoon:list():select(1)
     end, { desc = '[g]oto buffer [1] in harpoon ls' })
-    vim.keymap.set('n', '<leader>g2', function()
+    vim.keymap.set('n', '<leader>2', function()
       harpoon:list():select(2)
     end, { desc = '[g]oto buffer [2] in harpoon ls' })
-    vim.keymap.set('n', '<leader>g3', function()
+    vim.keymap.set('n', '<leader>3', function()
       harpoon:list():select(3)
     end, { desc = '[g]oto buffer [3] in harpoon ls' })
-    vim.keymap.set('n', '<leader>g4', function()
+    vim.keymap.set('n', '<leader>4', function()
       harpoon:list():select(4)
     end, { desc = '[g]oto buffer [4] in harpoon ls' })
   end,
